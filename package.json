@@ -3,10 +3,16 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "engines": {
+        "node": "10.3.0"
+    },
     "scripts": {
-        "start:build": "tsc",
-        "start:run": "nodemon build/index.js",
-        "start": "start:build"
+        "build-ts": "tsc",
+        "postinstall": "npm run build-ts",
+        "start": "npm run serve",
+        "serve": "node build/index.js",
+        "watch-node": "nodemon build/index.js",
+        "watch-ts": "tsc -w"
     },
     "keywords": [],
     "author": "",
