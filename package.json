@@ -9,7 +9,7 @@
     "scripts": {
         "build-ts": "tsc",
         "postinstall": "npm run build-ts",
-        "start": "npm run serve",
+        "start": "concurrently \"npm:build-ts\" \"npm:serve-dev\"",
         "serve-prod": "node build/index.js",
         "serve-dev": "nodemon build/index.js",
         "watch-node": "nodemon build/index.js",
